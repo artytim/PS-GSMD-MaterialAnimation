@@ -7,16 +7,18 @@
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 		<item name="colorAccent">@color/colorAccent</item>
 
-        <!--change the color of the ripple animation-->
-		<!--<item name="android:colorControlHighlight">#2fff00</item>-->
+        <!-- For ripple effect -->
+        <item name="android:colorControlHighlight">#5fe441</item>
 
+        <!-- Enable window content Transitions - either specify here or specify in the Activity-->
+        <!--<item name="android:windowContentTransitions">true</item>-->
 	</style>
 
-	<style name="ToolBarTheme"  parent="ThemeOverlay.AppCompat.Light">
+    <style name="ToolBarTheme"  parent="ThemeOverlay.AppCompat.Light">
 
-		<item name="android:textColorPrimary">@android:color/white</item>    <!-- Text Color of Toolbar Title  -->
-		<item name="android:textColorSecondary">@android:color/white</item>  <!-- Color of Overflow Menu ( 3 DOTS icon )
+        <item name="android:textColorPrimary">#FFF</item>    <!-- Text Color of Toolbar Title  -->
+        <item name="android:textColorSecondary">#FFF</item>  <!-- Color of Overflow Menu ( 3 DOTS icon )
                                                                     and color of Navigation Drawer Icon-->
-	</style>
+    </style>
 
 </resources>
