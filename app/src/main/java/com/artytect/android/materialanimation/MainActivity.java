@@ -5,11 +5,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private ImageView imgStar;
+    private TextView txvShared;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +32,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void bindControl() {
-
         Button btnExplodeJava = (Button) findViewById(R.id.explodeJava);
         Button btnExplodeXML = (Button) findViewById(R.id.explodeXML);
         Button btnSlideJava = (Button) findViewById(R.id.slideJava);
@@ -39,19 +44,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView txvCustomRippleWithBorder = (TextView) findViewById(R.id.txvCustomRippleWithBorder);
         TextView txvCustomRippleWithoutBorder = (TextView) findViewById(R.id.txvCustomRippleWithoutBorder);
 
+        LinearLayout layoutSharedElement = (LinearLayout) findViewById(R.id.shared_element);
+        imgStar = (ImageView) findViewById(R.id.imgStarSharedElement);
+        txvShared = (TextView) findViewById(R.id.txvSharedElement);
+
         btnExplodeJava.setOnClickListener(this);
         btnExplodeXML.setOnClickListener(this);
         btnSlideJava.setOnClickListener(this);
         btnSlideXML.setOnClickListener(this);
         btnFadeJava.setOnClickListener(this);
         btnFadeXML.setOnClickListener(this);
+        layoutSharedElement.setOnClickListener(this);
 
         txvRippleWithBorder.setOnClickListener(this);
         txvRippleWithoutBorder.setOnClickListener(this);
         txvCustomRippleWithBorder.setOnClickListener(this);
         txvCustomRippleWithoutBorder.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -126,8 +134,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             case R.id.shared_element: {
+                Pair[] pair = new Pair[2];
+                pair[0] = new Pair<View, String>(imgStar, "star");
+                pair[1] = new Pair<View, String>(txvShared, "text_shared");
 
-                break;
+                //noinspection unchecked
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, pair);
+                Intent i = new Intent(MainActivity.this, SharedElementActivity.class);
+                startActivity(i, options.toBundle());
             }
         }
     }

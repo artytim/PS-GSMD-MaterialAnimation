@@ -25,7 +25,7 @@ public class TransitionActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 
 		/*
-		Enable window content Transitions inside  activity (if didn't enable transitions in the theme)
+		Enable window content Transitions inside  activity (if not enabling transitions in the theme)
 		For AppCompat, getWindow() MUST be called before calling super.OnCreate &  before setContentView
 		*/
 		getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
