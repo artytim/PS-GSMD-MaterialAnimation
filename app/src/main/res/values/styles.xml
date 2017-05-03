@@ -12,6 +12,11 @@
 
         <!-- Enable window content Transitions - either specify here or specify in the Activity-->
         <!--<item name="android:windowContentTransitions">true</item>-->
+
+		<!-- Transition Overlap - Either Specify here or Specify in the Activity. -->
+		<!--<item name="android:windowAllowEnterTransitionOverlap">true</item>-->
+		<!--<item name="android:windowAllowReturnTransitionOverlap">true</item>-->
+
 	</style>
 
     <style name="ToolBarTheme"  parent="ThemeOverlay.AppCompat.Light">
